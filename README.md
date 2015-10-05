@@ -41,7 +41,6 @@ Included in this directory are as follows (listed alphabetically):
 
 	SaveData_Amira.m
 
-All files are authored by Henry Li, unless otherwise noted.
 
 File Descriptions:
 
