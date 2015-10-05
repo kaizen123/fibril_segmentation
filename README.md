@@ -2,6 +2,19 @@
 Algorithm for segmenting transmission electron microscopy (TEM) mitral valve interstitial cell (MVIC) images
 Developed at the 2015 Moncrief Internship at the Center for Cardiovascular Simulation, Institute of Computational Engineering and Sciences
 
+Result of centroid-finding algorithm, captured in Amira
+![alt tag](sample_images/amira_screencap_centroids.png)
+
+Result of region-growing algorithm, captured in Amira
+![alt tag](sample_images/amira_screencap_regions.png)
+
+The algorithm is broken into three steps:
+
+(1) The first step is a straightforward thresholding, where the input image is transformed into a binary image depending on the image intensity with regards to an intensity threshold. Thresholding is highly imperfect, and creates as many well-segmented fibrils as it does poorly-segmented. Namely, it creates two types of the latter: those that are overthresholded, which fuse with multiple neighboring fibrils, and those that are underthresholded, which separate into many unconnected regions.
+
+(2) The second step uses a combination of a simplified normalized cut algorithm (as seen in <i>Normalized Cuts and Image Segmentation</i>, Shi and Malik, 2010), complemented by a convolution operation, to find the approximate centroids of the fused, overthresholded regions, and the separated, underthresholded regions, respectively, as well as those of the well-segmented regions.
+
+(3) Finally, the third step is a simultaneous region-growing algorithm, where each region is seeded by the centroids of the previous step, and then grown at the same time. Since the fibrils exist very close to each other, the algorithm can inform its region growth by simply the proximity of neighboring regions (i.e., when regions bumped into each other, they have finished growing). By thresholding the growth of all regions to stop after a certain fraction of regions have finished, the algorithm allows the image to naturally segment itself.
 
 Included in this directory are as follows (listed alphabetically):
 
