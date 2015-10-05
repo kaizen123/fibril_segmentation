@@ -7,7 +7,7 @@ pause;
 
 % use LoadData_Amira (a third party script) to load label data (thresholded
 % fibril regions).
-[~, Data] = LoadData_Amira('Cell1-01.Labels.am');
+[~, Data] = LoadData_Amira('sample_images/Cell1-01.Labels.am');
 
 figure(1); clf; imshow(Data, [0 1]);
 disp('These are the thresholded fibrils. These will be fed to FindRegions. Note that the proceeding dialogue comes from FindRegions. Press Enter to continue...');
@@ -26,7 +26,7 @@ pause;
 
 % load original slice image data from Amira. this can be done from a tiff 
 % or from an Amira file via LoadData_Amira. here an Amira file is loaded.
-[~, origData] = LoadData_Amira('Cell1-01.am');
+[~, origData] = LoadData_Amira('sample_images/Cell1-01.am');
 
 figure(2); clf; imshow(origData);
 disp('This is the original slice image data. These will be fed to GrowRegionsMin. Press Enter to continue...');
