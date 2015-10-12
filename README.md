@@ -1,6 +1,6 @@
 # fibril_segmentation
 Algorithm for segmenting transmission electron microscopy (TEM) mitral valve interstitial cell (MVIC) images
-developed at the 2015 Moncrief Internship at the Center for Cardiovascular Simulation, Institute of Computational Engineering and Sciences
+developed at the 2015 Moncrief Internship, Center for Cardiovascular Simulation, Institute of Computational Engineering and Sciences
 
 The algorithm is broken into three steps:
 
